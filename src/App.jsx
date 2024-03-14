@@ -9,13 +9,27 @@ function App() {
       <h1>Todo List!</h1>
       
       <AddTodoForm /> 
-
       <TodoList />
-
       <MotivationalQuote />
-      
-  </div>
+
+    </div>
   );
 }
 
-export default App;
+const Search = () => {
+  const handleChange = (event) => {
+    // synthetic event
+    console.log(event);
+    // value of target (here: input HTML element)
+    console.log(event.target.value);
+    }
+  
+  return (
+    <div>
+      <label htmlFor="search">Search</label>
+      <input id="search" type="text" onChange={handleChange} />
+    </div>
+  );
+};
+
+export default App; 
