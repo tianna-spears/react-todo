@@ -26,18 +26,25 @@ const todoList= [
       title: 'Code The Dream HW Assignment 1',
       due_date: 'February 27, 2024',
       task_ID: 4,
-    }
+    },
+    {
+      title: 'Code The Dream HW Assignment 2',
+      due_date: 'March 5, 2024',
+      task_ID: 5,
+    },
+    {
+      title: 'Code The Dream HW Assignment 3',
+      due_date: 'March 12, 2024',
+      task_ID: 6,
+    },
   ];
   
-
-function TodoList () {
-    return (
-        <ul>
-        {todoList.map(function (item) {
-          < TodoListItem />
-        })}
-        </ul>
-    )
-}
+const TodoList = (props) => (
+      <ul>
+        {props.todoList.map((item)) } (
+          <TodoListItem key={item.task_ID} item={item} />
+        )
+      </ul>
+);    
 
 export default TodoList;
