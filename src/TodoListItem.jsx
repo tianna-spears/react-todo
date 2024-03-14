@@ -1,10 +1,10 @@
 import React from 'react';
 
-function TodoListItem () {
+function TodoListItem (props) {
     return (
         <li>
-            <span> {item.title} </span>
-            <span> {'by'} {item.due_date} </span>
+            <span> {props.item.title} </span>
+            <span> {'by'} {props.item.due_date} </span>
         </li> 
     )
 }
