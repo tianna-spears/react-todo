@@ -39,12 +39,15 @@ const todoList= [
     },
   ];
   
-const TodoList = (props) => (
+function TodoList ({todos}) {
+  return (
+    <div>
       <ul>
-        {props.todoList.map((item)) } (
-          <TodoListItem key={item.task_ID} item={item} />
-        )
+        {todoList.map(TodoListItem) } (
+          <TodoListItem key={todo.id} todo={todo} />
       </ul>
-);    
+      )
+    </div>
+)};    
 
 export default TodoList;
