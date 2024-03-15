@@ -3,8 +3,8 @@ import React from 'react';
 function TodoListItem (props) {
     return (
         <li>
-            <span> {props.item.title} </span>
-            <span> {'by'} {props.item.due_date} </span>
+            <span> {props.todo} </span>
+            <span> {'by'} {props.todo} </span>
         </li> 
     )
 }
