@@ -42,16 +42,12 @@ const todoList= [
   function TodoList () {
     return (
         <ul>
-        {todoList.map(function (item) {
+        {todoList.map(function (TodoListItem) {
 
-          return (
-          <li key={item.task_ID}>
-          <span> {item.title} </span>
-          <span> {'by'} {item.due_date} </span>
-            </li>
-          );
+            <TodoListItem />
         })}
         </ul>
-    )}
+    )
+}
 
 export default TodoList;
