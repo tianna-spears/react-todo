@@ -39,15 +39,19 @@ const todoList= [
     },
   ];
   
-function TodoList ({todos}) {
-  return (
-    <div>
-      <ul>
-        {todoList.map(TodoListItem) } (
-          <TodoListItem key={todo.id} todo={todo} />
-      </ul>
-      )
-    </div>
-)};    
+  function TodoList () {
+    return (
+        <ul>
+        {todoList.map(function (item) {
+
+          return (
+          <li key={item.task_ID}>
+          <span> {item.title} </span>
+          <span> {'by'} {item.due_date} </span>
+            </li>
+          );
+        })}
+        </ul>
+    )}
 
 export default TodoList;
