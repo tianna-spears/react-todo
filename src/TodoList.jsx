@@ -41,12 +41,13 @@ const todoList= [
   
   function TodoList () {
     return (
-        <ul>
-        {todoList.map(function (TodoListItem) {
-
-            <TodoListItem />
+      <ul>
+        {todoList.map((item) => {
+          return ( 
+            <TodoListItem title={item.title} due_date={item.due_date} key={item.task_ID}/>
+                )
         })}
-        </ul>
+      </ul>
     )
 }
 
