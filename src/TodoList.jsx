@@ -37,6 +37,11 @@ const todoList= [
       due_date: 'March 12, 2024',
       task_ID: 6,
     },
+    {
+      title: 'Mindset Assignment + review material over the last three weeks, revise assignments, and resubmit if needed.',
+      due_date: 'March 19, 2024',
+      task_ID: 7,
+    },
   ];
   
   function TodoList () {
