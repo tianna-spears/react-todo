@@ -2,6 +2,7 @@ import React from 'react';
 import TodoList from './TodoList.jsx';
 import AddTodoForm from './AddTodoForm.jsx';
 import MotivationalQuote from './MotivationalQuote';
+import TodoListItem from './TodoListItem.jsx';
 
 function App() {
   return (

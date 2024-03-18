@@ -9,6 +9,4 @@ function MotivationalQuote () {
     )
 }
 
-
-
 export default MotivationalQuote;
