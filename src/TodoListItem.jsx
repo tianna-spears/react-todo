@@ -3,9 +3,9 @@ import React from 'react';
 function TodoListItem (props)  {
     return (
         <li key={props.key}>
-        <span> {props.title} </span>
-        <span> {'by'} {props.due_date} </span>
-          </li>
+            <span> {props.title} </span>
+            <span> {'by'} {props.due_date} </span>
+        </li>
     );
 }
 
