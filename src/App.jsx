@@ -4,8 +4,15 @@ import AddTodoForm from './AddTodoForm.jsx';
 import MotivationalQuote from './MotivationalQuote.jsx';
 
 function App() {
-    const [newTodo, setNewTodo]= React.useState('');
+    const [newTodo, setNewTodo]= useState('');
+    const [todoList, setTodoList] = useState([]);
+
     const handleAddTodo = (todoTitle) => {
+      const newTodoItem = {
+        title: todoTitle,
+      }
+
+      setTodoList([todoList, newTodoItem]);
       setNewTodo(todoTitle);
     };
 
@@ -13,11 +20,11 @@ function App() {
     <div>
       <h1>Todo List!</h1>
       
-      <AddTodoForm onAddTodo={setNewTodo}/> 
+      <AddTodoForm onAddTodo={handleAddTodo}/> 
             <p> {newTodo} </p>
 
 
-      <TodoList />
+      <TodoList todoList={todoList} />
       <MotivationalQuote />
 
     </div>

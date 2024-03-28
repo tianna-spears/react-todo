@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import TodoListItem from './TodoListItem.jsx';
 
 const todoList= [
@@ -44,15 +44,15 @@ const todoList= [
     },
   ];
   
-  function TodoList () {
+  function TodoList (props) {
     return (
       <ul>
-        {todoList.map((item) => {
+        {todoList.map((props) => {
           return ( 
             < TodoListItem 
-            title={item.title} 
-            due_date={item.due_date} 
-            key={item.task_ID}
+            title={props.item.title} 
+            due_date={props.item.due_date} 
+            key={props.item.task_ID}
             />
                 )
         })}
