@@ -4,26 +4,17 @@ import AddTodoForm from './AddTodoForm.jsx';
 import MotivationalQuote from './MotivationalQuote.jsx';
 
 function App() {
-    const [newTodo, setNewTodo]= useState('');
     const [todoList, setTodoList] = useState([]);
 
-    const handleAddTodo = (todoTitle) => {
-      const newTodoItem = {
-        title: todoTitle,
-      }
-
-      setTodoList([todoList, newTodoItem]);
-      setNewTodo(todoTitle);
-    };
+    const addTodo = (newTodo) => {
+      setTodoList([...todoList, newTodo]) 
+    }
 
   return (
     <div>
       <h1>Todo List!</h1>
       
-      <AddTodoForm onAddTodo={handleAddTodo}/> 
-            <p> {newTodo} </p>
-
-
+      <AddTodoForm onAddTodo={addTodo} /> 
       <TodoList todoList={todoList} />
       <MotivationalQuote />
 
