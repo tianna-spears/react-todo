@@ -1,11 +1,10 @@
 import React from 'react';
 
-const InputWithLabel = ({ id, name, value, onChange }) => (
+const InputWithLabel = ({ id, value, onChange, children }) => (
     <>
-    <label htmlFor={id}>{name}</label>
+    <label htmlFor={id}>{children}</label>
     <input 
     id= {id} 
-    name="title" 
     type="text" 
     value={value} 
     onChange={onChange} />
