@@ -20,10 +20,10 @@ const AddTodoForm = ({ onAddTodo }) => {
         <form onSubmit={handleAddTodo}>
 
         <InputWithLabel 
-        id= "todoTitle"
+        id= "title"
         value= {todoTitle}
-        isFocused
-        onChange={handleTitleChange}
+        onChange={(e) => setTodoTitle(e.target.value)}
+        isFocused={true}
         >
         <strong> Title </strong> 
         </InputWithLabel>

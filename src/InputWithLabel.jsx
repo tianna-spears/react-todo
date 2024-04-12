@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const InputWithLabel = ({ 
     id, 
@@ -8,9 +8,9 @@ const InputWithLabel = ({
     isFocused, 
     children,
 }) => {
-    const inputRef= React.useRef();
+    const inputRef= useRef();
     
-    React.useEffect(() => {
+    useEffect(() => {
         if (isFocused && inputRef.current) {
             inputRef.current.focus();
         }
