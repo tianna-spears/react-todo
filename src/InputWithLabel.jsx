@@ -14,7 +14,9 @@ const InputWithLabel = ({
         if (isFocused && inputRef.current) {
             inputRef.current.focus();
         }
-    }, [isFocused]);
+    });
+
+    console.log(value);
 
 return (
     <>
