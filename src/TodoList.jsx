@@ -5,7 +5,8 @@ import TodoListItem from './TodoListItem.jsx';
     return (
       <ul>
         {todoList.map((item) => (
-            < TodoListItem 
+            < TodoListItem
+            key={item.id}
             title={item.title} 
             id={item.id} 
             onRemoveTodo={onRemoveTodo}
