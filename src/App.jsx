@@ -17,20 +17,24 @@ function App() {
   const key = 'savedTodoList';
 
   const [todoList, setTodoList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   
     useEffect(() => {
       getAsyncList().then(result => {
         setTodoList(result.todoList);
+        setIsLoading(false);
       });
     }, []);
 
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(todoList));
-  }, [todoList, key]);
+    if (!isLoading) {
+      localStorage.setItem(key, JSON.stringify(todoList));
+  }
+ }, [todoList, isLoading, key]);
   
     const removeTodo = (id) => {
       const updatedTodoList = todoList.filter((todo) => todo.id !== id);
-    setTodoList(updatedTodoList);
+      setTodoList(updatedTodoList);
   };
 
     const addTodo = (newTodo) => {
