@@ -8,7 +8,7 @@ const initialState = [];
 const getAsyncList = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve({ todoList: initialState });
+      resolve({ data: {todoList: initialState  }});
       }, 2000);
     });
   };
@@ -21,7 +21,7 @@ function App() {
   
     useEffect(() => {
       getAsyncList().then(result => {
-        setTodoList(result.todoList);
+        setTodoList(result.data.todoList);
         setIsLoading(false);
       });
     }, []);
@@ -49,14 +49,19 @@ function App() {
       onAddTodo={addTodo} 
       /> 
 
-      <TodoList todoList={todoList} 
+  {isLoading ? (
+      <p>Loading ...</p>
+    ) : (
+      <TodoList
+       todoList={todoList} 
       onRemoveTodo={removeTodo}
       /> 
+    )}
 
       <MotivationalQuote />
 
     </>
-  );
+  )
 }
 
 export default App;
