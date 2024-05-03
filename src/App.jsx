@@ -51,7 +51,6 @@ function App() {
     fetchData();
   }, []);
   
-
     useEffect(() => {
       getAsyncList().then(result => {
         setTodoList(result.data.todoList);
@@ -63,7 +62,7 @@ function App() {
     if (!isLoading) {
       localStorage.setItem(key, JSON.stringify(todoList));
   }
- }, [todoList, isLoading, key]);
+ }, [todoList, isLoading]);
   
     const removeTodo = (id) => {
       const updatedTodoList = todoList.filter((todo) => todo.id !== id);
