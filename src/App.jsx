@@ -52,11 +52,19 @@ function App() {
   }, []);
   
     useEffect(() => {
+      let mounted= true;
+
       getAsyncList().then(result => {
+        if(mounted) {
         setTodoList(result.data.todoList);
         setIsLoading(false);
-      });
-    }, []);
+      }
+    });
+
+  return () => {
+    mounted = false;
+  };
+}, []);
 
   useEffect(() => {
     if (!isLoading) {
