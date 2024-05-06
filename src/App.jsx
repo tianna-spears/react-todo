@@ -50,13 +50,6 @@ function App() {
   useEffect(() => {
     fetchData();
   }, []);
-  
-    useEffect(() => {
-      getAsyncList().then(result => {
-        setTodoList(result.data.todoList);
-        setIsLoading(false);
-      });
-    }, []);
 
   useEffect(() => {
     if (!isLoading) {
