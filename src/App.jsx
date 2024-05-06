@@ -20,12 +20,19 @@ function App() {
 
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
+    getAsyncList().then(result => {
+      setTodoList(result.data.todoList);
+      setIsLoading(false);
+    });
+    }, []);
 
   useEffect(() => {
     if (!isLoading) {
     localStorage.setItem(key, JSON.stringify(todoList));
   }
- }, [todoList]);
+ }, [todoList, isLoading]);
   
 const removeTodo = (id) => {
   const updatedTodoList = todoList.filter((todo) => todo.id !== id);
