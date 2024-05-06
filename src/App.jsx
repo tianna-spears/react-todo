@@ -32,7 +32,7 @@ function App() {
     if (!isLoading) {
     localStorage.setItem(key, JSON.stringify(todoList));
   }
- }, [todoList, isLoading]);
+ }, [todoList]);
   
 const removeTodo = (id) => {
   const updatedTodoList = todoList.filter((todo) => todo.id !== id);
