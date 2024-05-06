@@ -20,13 +20,6 @@ function App() {
 
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  
-  useEffect(() => {
-    getAsyncList().then(result => {
-      setTodoList(result.data.todoList);
-      setIsLoading(false);
-    });
-    }, []);
 
   useEffect(() => {
     if (!isLoading) {
