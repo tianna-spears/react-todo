@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TodoList from './TodoList.jsx';
 import AddTodoForm from './AddTodoForm.jsx';
 import MotivationalQuote from './MotivationalQuote.jsx';
@@ -44,26 +45,27 @@ const addTodo = (newTodo) => {
   };
 
   return (
-    <>
-      <h1>Todo List!</h1>
-            
-      <AddTodoForm 
-      onAddTodo={addTodo} 
-      /> 
+    <BrowserRouter>
+      <Routes>
+        <Route path= "/" element={
+          <div>
+            <h1> Todo List </h1>
+            <AddTodoForm onAddTodo={addTodo} /> 
+            {isLoading ? (
+              <p>Loading ...</p>
+            ) : (
+            <TodoList todoList={todoList} onRemoveTodo={removeTodo}/> 
+        )}
+            <MotivationalQuote />
+          </div>
+         } /> 
 
-  {isLoading ? (
-      <p>Loading ...</p>
-    ) : (
-      <TodoList
-       todoList={todoList} 
-      onRemoveTodo={removeTodo}
-      /> 
-    )}
-
-      <MotivationalQuote />
-
-    </>
-  )
+    <Route path="/new" element={
+      <h1> New Todo List</h1> 
+      } />
+    </Routes>
+  </BrowserRouter>
+  );
 }
 
 export default App;
