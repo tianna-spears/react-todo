@@ -4,6 +4,8 @@ import TodoList from './TodoList.jsx';
 import AddTodoForm from './AddTodoForm.jsx';
 import MotivationalQuote from './MotivationalQuote.jsx';
 
+import './index.css'
+
 const key = 'savedTodoList';
 
 const initialState = [];
@@ -56,7 +58,7 @@ const addTodo = (newTodo) => {
             ) : (
             <TodoList todoList={todoList} onRemoveTodo={removeTodo}/> 
         )}
-            <MotivationalQuote />
+            <MotivationalQuote/>
           </div>
          } /> 
 
