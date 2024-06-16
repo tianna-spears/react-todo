@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 const InputWithLabel = ({ 
     id, 
@@ -17,6 +18,15 @@ const InputWithLabel = ({
     });
 
     console.log(value);
+
+InputWithLabel.propTypes= {
+    id: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    type: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    isFocused: PropTypes.bool,
+    children: PropTypes.node.isRequired,
+}
 
 return (
     <>

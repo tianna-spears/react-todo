@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import TodoList from './TodoList.jsx';
-import AddTodoForm from './AddTodoForm.jsx';
-import MotivationalQuote from './MotivationalQuote.jsx';
+import TodoList from './/components/TodoContainer.jsx/TodoList';
+import AddTodoForm from './/components/AddTodoForm.jsx';
+import MotivationalQuote from './/components/MotivationalQuote.jsx'
 
 import './index.css'
 

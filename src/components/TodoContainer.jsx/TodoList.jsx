@@ -1,7 +1,14 @@
 import * as React from 'react';
 import TodoListItem from './TodoListItem.jsx';
+import PropTypes from 'prop-types';
   
-  function TodoList ({ todoList, onRemoveTodo }) {
+function TodoList ({ todoList, onRemoveTodo }) {
+
+  TodoList.propTypes= {
+    todoList: PropTypes.array.isRequired,
+    onRemoveTodo: PropTypes.func.isRequired, 
+  }
+
     return (
       <ul>
         {todoList.map((item) => (
