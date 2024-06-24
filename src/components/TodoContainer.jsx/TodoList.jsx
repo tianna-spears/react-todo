@@ -9,7 +9,7 @@ function TodoList ({ todoList, onRemoveTodo }) {
         {todoList.map((item) => (
             < TodoListItem
             key={item.id}
-            title={item.title} 
+            title={item.title}
             id={item.id} 
             onRemoveTodo={onRemoveTodo}
             />
