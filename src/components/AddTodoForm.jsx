@@ -16,10 +16,6 @@ const AddTodoForm = ({ onAddTodo }) => {
         setTodoTitle('');
     }
 
-    AddTodoForm.propTypes = {
-        onAddTodo: PropTypes.func.isRequired,
-    }
-
     return (
         <>
         <form onSubmit={handleAddTodo}>
@@ -37,6 +33,10 @@ const AddTodoForm = ({ onAddTodo }) => {
         </form>
         </>
     )
+}
+
+AddTodoForm.propTypes = {
+    onAddTodo: PropTypes.func.isRequired,
 }
 
 export default AddTodoForm;
