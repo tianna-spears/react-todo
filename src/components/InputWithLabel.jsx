@@ -19,15 +19,6 @@ const InputWithLabel = ({
 
     console.log(value);
 
-InputWithLabel.propTypes= {
-    id: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    type: PropTypes.string,
-    onChange: PropTypes.func.isRequired,
-    isFocused: PropTypes.bool,
-    children: PropTypes.node.isRequired,
-}
-
 return (
     <>
     <label htmlFor={id}>{children}</label>
@@ -41,5 +32,13 @@ return (
    </>
   );
 };
+InputWithLabel.propTypes= {
+    id: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    type: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    isFocused: PropTypes.bool,
+    children: PropTypes.node.isRequired,
+}
 
 export default InputWithLabel;
