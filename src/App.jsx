@@ -30,7 +30,7 @@ function App() {
         Authorization: `Bearer ${import.meta.env.VITE_AIRTABLE_API_TOKEN}`
       }
     };
-    const url = `https://api.airtable.com/v0/${import.meta.env.VITE_AIRTABLE_BASE_ID}/${import.meta.env.VITE_TABLE_NAME}`;
+    const url = `https://api.airtable.com/v0/${import.meta.env.VITE_AIRTABLE_BASE_ID}/${import.meta.env.VITE_TABLE_NAME}?view=Grid%20view&sort[0][field]=Title&sort[0][direction]=asc`;
 
     try {
       const response = await fetch(url, options);
@@ -38,10 +38,20 @@ function App() {
         throw new Error(`Error: ${response.status}`);
       } 
       const data = await response.json();
-      const todos = data.records.map(record => ({
-        title: record.fields.title,
+
+      const sortedRecords = data.records.sort((objectA, objectB) => {
+        const titleA = objectA.fields.Title.toLowerCase();
+        const titleB = objectB.fields.Title.toLowerCase();
+        if (titleA > titleB) return -1;
+        if (titleA < titleB) return 1;
+        return 0;
+    });
+
+      const todos = sortedRecords.map(record => ({
+        title: record.fields.Title,
         id: record.id
       }));
+      
       setTodoList(todos);
       setIsLoading(false);
     } catch (error) {
@@ -50,14 +60,11 @@ function App() {
   }
 
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  useEffect(() => {
     getAsyncList().then(result => {
       setTodoList(result.data.todoList);
       setIsLoading(false);
     });
+    fetchData();
     }, []);
 
   useEffect(() => {
