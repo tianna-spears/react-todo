@@ -32,6 +32,7 @@ return (
    </>
   );
 };
+
 InputWithLabel.propTypes= {
     id: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,

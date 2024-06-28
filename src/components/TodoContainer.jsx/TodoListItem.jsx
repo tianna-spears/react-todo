@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './TodoListItem.module.css';
 import PropTypes from 'prop-types';
  
-function TodoListItem ({title, id, onRemoveTodo})  {
+function TodoListItem ({id, title, onRemoveTodo})  {
 
     return (
         <li className={styles.todolistheader} key={id}>
@@ -13,8 +13,8 @@ function TodoListItem ({title, id, onRemoveTodo})  {
 }
 
 TodoListItem.propTypes= {
-    title: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     onRemoveTodo: PropTypes.func.isRequired, 
   }
 
